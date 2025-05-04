@@ -10,24 +10,9 @@
       margin: 0;
       overflow: hidden;
     }
-    #vr-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <!-- Custom Enter VR Button -->
-  <button id="vr-button">Enter VR</button>
-
   <!-- A-Frame Scene -->
   <a-scene>
     <!-- Lighting -->
@@ -42,18 +27,8 @@
 
     <!-- Camera -->
     <a-entity id="cameraRig" position="0 0 0">
-      <a-camera id="camera" position="0 1.6 0" wasd-controls="enabled: true" look-controls></a-camera>
+      <a-camera position="0 1.6 0" wasd-controls="enabled: true" look-controls></a-camera>
     </a-entity>
   </a-scene>
-
-  <script>
-    const vrButton = document.getElementById('vr-button');
-    const scene = document.querySelector('a-scene');
-
-    vrButton.addEventListener('click', () => {
-      scene.enterVR();
-      vrButton.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
